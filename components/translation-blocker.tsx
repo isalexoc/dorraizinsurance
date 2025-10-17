@@ -7,6 +7,8 @@ import { Globe, X, AlertCircle } from "lucide-react";
 export function TranslationBlocker() {
   const [showNotification, setShowNotification] = useState(false);
   const [detectedLanguage, setDetectedLanguage] = useState<string | null>(null);
+  const [hasShownNotification, setHasShownNotification] = useState(false);
+  const [autoHideTimeout, setAutoHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Remove Google Translate elements if they appear
@@ -31,24 +33,29 @@ export function TranslationBlocker() {
 
     // Detect if Google Translate is being used
     const detectTranslation = () => {
+      // Don't show notification if it's already been shown and dismissed
+      if (hasShownNotification) return;
+
       // Check for Google Translate indicators
       const isTranslated = document.documentElement.classList.contains('translated-ltr') ||
                           document.documentElement.classList.contains('translated-rtl') ||
                           document.querySelector('.goog-te-banner-frame') !== null ||
                           document.querySelector('.skiptranslate') !== null;
 
-      if (isTranslated) {
+      if (isTranslated && !showNotification) {
         // Detect the target language
         const langAttr = document.documentElement.getAttribute('lang');
         const detectedLang = langAttr && langAttr !== 'es' ? langAttr : 'English';
         
         setDetectedLanguage(detectedLang);
         setShowNotification(true);
+        setHasShownNotification(true);
         
         // Auto-hide after 8 seconds
-        setTimeout(() => {
+        const timeout = setTimeout(() => {
           setShowNotification(false);
         }, 8000);
+        setAutoHideTimeout(timeout);
       }
     };
 
@@ -95,8 +102,19 @@ export function TranslationBlocker() {
       observer.disconnect();
       docObserver.disconnect();
       document.removeEventListener('contextmenu', preventContextMenu);
+      if (autoHideTimeout) {
+        clearTimeout(autoHideTimeout);
+      }
     };
-  }, []);
+  }, [hasShownNotification, showNotification, autoHideTimeout]);
+
+  const handleClose = () => {
+    setShowNotification(false);
+    if (autoHideTimeout) {
+      clearTimeout(autoHideTimeout);
+      setAutoHideTimeout(null);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -111,7 +129,7 @@ export function TranslationBlocker() {
           <div className="bg-white border border-gray-200 rounded-xl shadow-2xl p-4 relative">
             {/* Close button */}
             <button
-              onClick={() => setShowNotification(false)}
+              onClick={handleClose}
               className="absolute top-2 right-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
             >
               <X className="w-4 h-4 text-gray-500" />
