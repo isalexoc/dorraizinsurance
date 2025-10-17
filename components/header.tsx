@@ -80,8 +80,12 @@ export function Header() {
                 </Link>
               ))}
             </div>
-            <LanguageToggle />
           </nav>
+
+          {/* Tablet Language Toggle */}
+          <div className="hidden md:flex lg:hidden items-center">
+            <LanguageToggle />
+          </div>
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
@@ -97,47 +101,51 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="w-6 h-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent>
-              <nav className="flex flex-col space-y-4 mt-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-gray-600 hover:text-green-600 transition-colors font-medium py-2"
-                    onClick={() => handleNavClick(item.href)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="pt-4 border-t">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-2 text-sm text-gray-600">
-                      <Phone className="w-4 h-4" />
-                      <span>{t.header.phone}</span>
+          {/* Mobile Header Actions */}
+          <div className="flex items-center space-x-2 md:hidden">
+            <LanguageToggle />
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="w-6 h-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <nav className="flex flex-col space-y-4 mt-8">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-gray-600 hover:text-green-600 transition-colors font-medium py-2"
+                      onClick={() => handleNavClick(item.href)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="pt-4 border-t">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-2 text-sm text-gray-600">
+                        <Phone className="w-4 h-4" />
+                        <span>{t.header.phone}</span>
+                      </div>
+                      <LanguageToggle />
                     </div>
-                    <LanguageToggle />
-                  </div>
-                  <Button
-                    className="w-full bg-green-600 hover:bg-green-700"
-                    onClick={() => {
-                      setIsOpen(false);
+                    <Button
+                      className="w-full bg-green-600 hover:bg-green-700"
+                      onClick={() => {
+                        setIsOpen(false);
 
-                      window.location.href = "/contact";
-                    }}
-                  >
-                    {t.header.cta}
-                  </Button>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
+                        window.location.href = "/contact";
+                      }}
+                    >
+                      {t.header.cta}
+                    </Button>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
+
         </div>
       </div>
     </motion.header>
