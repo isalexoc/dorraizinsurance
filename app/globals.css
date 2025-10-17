@@ -6,6 +6,29 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Prevent browser translation */
+* {
+  -webkit-translate: no !important;
+  -moz-translate: no !important;
+  -ms-translate: no !important;
+  -o-translate: no !important;
+  translate: no !important;
+}
+
+/* Hide Google Translate widget if it appears */
+.goog-te-banner-frame,
+.goog-te-gadget,
+.goog-te-combo {
+  display: none !important;
+}
+
+/* Prevent translation overlay */
+.goog-te-banner-frame {
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

@@ -7,6 +7,7 @@ import CrispChat from "@/components/crisp-chat";
 import { LanguageProvider } from "@/hooks/useLanguage";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { TranslationBlocker } from "@/components/translation-blocker";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,6 +60,8 @@ export const metadata: Metadata = {
   },
   other: {
     "theme-color": "#22c55e",
+    "google": "notranslate",
+    "translate": "no",
   },
 };
 
@@ -68,11 +71,18 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="es" className="scroll-smooth" translate="no">
+      <head>
+        <meta name="google" content="notranslate" />
+        <meta name="translate" content="no" />
+        <meta httpEquiv="Content-Language" content="es" />
+      </head>
       <body
         className={`${inter.className} flex min-h-screen flex-col bg-white text-gray-900 overflow-x-hidden`}
+        translate="no"
       >
         <LanguageProvider>
+          <TranslationBlocker />
           <Header />
           <main className="flex-1 w-full">{children}</main>
           <Toaster />
