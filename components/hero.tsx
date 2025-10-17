@@ -114,7 +114,7 @@ export function Hero() {
               >
                 <div className="bg-white rounded-xl p-3 shadow-lg border border-gray-100">
                   <Image
-                    src="https://res.cloudinary.com/isaacdev/image/upload/v1760672584/dil_zr0iuu.png"
+                    src="https://res.cloudinary.com/isaacdev/image/upload/f_auto,q_auto,w_96,c_scale/v1760672584/dil_zr0iuu.png"
                     alt="Dorraiz Insurance Logo"
                     width={100}
                     height={40}
