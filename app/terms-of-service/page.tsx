@@ -18,16 +18,16 @@ export default function TermsOfServicePage() {
         sms: {
           title: "1. Términos y Condiciones de SMS",
           content:
-            "Las siguientes políticas regulan todas las comunicaciones por SMS emitidas por Dorraiz Insurance:",
+            "La inscripción móvil, el consentimiento SMS y los números de teléfono recopilados para fines de comunicación SMS no se compartirán con terceros o afiliados para fines de marketing.",
           items: [
-            "1 – Comunicación de consentimiento de SMS: Los números telefónicos obtenidos para consentimiento SMS no se comparten con terceros para fines de marketing.",
-            "2 – Tipos de comunicaciones SMS: recordatorios de pago, avisos de inscripción y notificaciones de servicio. Ejemplos: «Estimado Cliente: le recordamos que su póliza caerá en inactividad…» o «Hola, este es un recordatorio amistoso de su próxima cita…». Puede responder STOP para dejar de recibir SMS en cualquier momento.",
-            "3 – Frecuencia de mensajes: la frecuencia puede variar según la comunicación; por ejemplo, hasta 3 mensajes SMS por semana relacionados con su póliza o período de inscripción.",
-            "4 – Posibles tarifas: se pueden aplicar cargos estándar de mensajes y datos, los cuales pueden variar si el SMS es nacional o internacional.",
-            "5 – Método de inclusión (Opt-In): marcando la casilla de consentimiento en nuestros formularios en línea.",
-            "6 – Método de exclusión (Opt-Out): puede darse de baja en cualquier momento respondiendo «STOP» o contactándonos directamente para ser eliminado.",
-            "7 – Ayuda: si experimenta problemas, responda «AYUDA» o visite https://www.dorraizinsurance.com/contact.",
-            "8 – Divulgaciones estándar: podrían aplicarse tarifas de mensajes y datos. Para ayuda envíe AYUDA al (956) 302-1451. La frecuencia de mensajes puede variar.",
+            "1. Comunicación de Consentimiento SMS: La información (números de teléfono) obtenida como parte del proceso de consentimiento SMS no se compartirá con terceros para fines de marketing.",
+            "2. Tipos de Comunicaciones SMS: Si ha dado su consentimiento para recibir mensajes de texto de Dorraiz Insurance, puede recibir mensajes relacionados con lo siguiente: Atención al cliente, Notificaciones de cuenta, Alerta de fraude. Ejemplo: \"Hola, este es un recordatorio amigable de su próxima cita con el Dr. [Nombre] en [Ubicación] el [Fecha] a las [Hora]. Puede responder STOP para cancelar los mensajes SMS de Dorraiz Insurance en cualquier momento.\"",
+            "3. Frecuencia de Mensajes: La frecuencia de mensajes puede variar dependiendo del tipo de comunicación. Por ejemplo, puede recibir hasta 2 mensajes SMS por semana relacionados con sus citas.",
+            "4. Tarifas Potenciales para Mensajería SMS: Tenga en cuenta que pueden aplicarse tarifas estándar de mensajes y datos, dependiendo del plan de precios de su operador. Estas tarifas pueden variar si el mensaje se envía nacional o internacionalmente.",
+            "5. Método de Inscripción: Puede inscribirse para recibir mensajes SMS de Dorraiz Insurance de las siguientes maneras: Al enviar un formulario en línea.",
+            "6. Método de Cancelación: Puede cancelar la recepción de mensajes SMS en cualquier momento. Para hacerlo, simplemente responda \"STOP\" a cualquier mensaje SMS que reciba. Alternativamente, puede contactarnos directamente para solicitar la eliminación de nuestra lista de mensajería.",
+            "7. Ayuda: Si está experimentando algún problema, puede responder con la palabra clave HELP. O puede obtener ayuda directamente de nosotros en https://www.dorraizinsurance.com/contact. Opciones Adicionales: Si no desea recibir mensajes SMS, puede elegir no marcar la casilla de consentimiento SMS en nuestros formularios.",
+            "8. Divulgaciones Estándar de Mensajería: Pueden aplicarse tarifas de mensajes y datos. Puede cancelar en cualquier momento enviando \"STOP\". Para asistencia, envíe \"HELP\" o visite nuestras páginas de Política de Privacidad y Términos y Condiciones. La frecuencia de mensajes puede variar.",
           ],
         },
 
@@ -161,18 +161,18 @@ export default function TermsOfServicePage() {
       sections: {
         /* 1 */
         sms: {
-          title: "1. SMS Terms and Conditions",
+          title: "1. SMS Terms & Conditions",
           content:
-            "The following policies govern all SMS communications issued by Dorraiz Insurance:",
+            "Mobile Opt in, SMS Consent, and phone numbers collected for SMS communication purposes will not be shared with any third party or affiliates for marketing purposes.",
           items: [
-            "1 – SMS Consent Communication: phone numbers collected for SMS consent are not shared with third parties for marketing purposes.",
-            "2 – Types of SMS: payment reminders, enrollment notices and service notifications. Examples: “Dear Client: we remind you that your policy is about to lapse…” or “Hi, this is a friendly reminder of your upcoming appointment…”. You may reply STOP at any time to opt out.",
-            "3 – Message Frequency: frequency may vary; for example, up to 3 SMS per week related to your policy or enrollment period.",
-            "4 – Possible Charges: standard message and data rates may apply, and may vary for domestic or international SMS.",
-            "5 – Opt-In Method: by checking the SMS-consent box in our online forms.",
-            "6 – Opt-Out Method: you may stop receiving SMS at any time by replying “STOP” or contacting us directly to be removed.",
-            "7 – Help: reply “HELP” or visit https://www.dorraizinsurance.com/contact if you need assistance.",
-            "8 – Standard Disclosure: message/data rates may apply. For help text HELP to (956) 302-1451. Message frequency varies.",
+            "1. SMS Consent Communication: The information (Phone Numbers) obtained as part of the SMS consent process will not be shared with third parties for marketing purposes.",
+            "2. Types of SMS Communications: If you have consented to receive text messages from Dorraiz Insurance, you may receive messages related to the following: Customer care, Account Notifications, Fraud alert. Example: \"Hello, this is a friendly reminder of your upcoming appointment with Dr. [Name] at [Location] on [Date] at [Time]. You can reply STOP to opt out of SMS messaging from Dorraiz Insurance at any time.\"",
+            "3. Message Frequency: Message frequency may vary depending on the type of communication. For example, you may receive up to 2 SMS messages per week related to your appointments.",
+            "4. Potential Fees for SMS Messaging: Please note that standard message and data rates may apply, depending on your carrier's pricing plan. These fees may vary if the message is sent domestically or internationally.",
+            "5. Opt-In Method: You may opt in to receive SMS messages from Dorraiz Insurance in the following ways: By submitting an online form.",
+            "6. Opt-Out Method: You can opt out of receiving SMS messages at any time. To do so, simply reply \"STOP\" to any SMS message you receive. Alternatively, you can contact us directly to request removal from our messaging list.",
+            "7. Help: If you are experiencing any issues, you can reply with the keyword HELP. Or, you can get help directly from us at https://www.dorraizinsurance.com/contact. Additional Options: If you do not wish to receive SMS messages, you can choose not to check the SMS consent box on our forms.",
+            "8. Standard Messaging Disclosures: Message and data rates may apply. You can opt out at any time by texting \"STOP.\" For assistance, text \"HELP\" or visit our Privacy Policy and Terms and Conditions pages. Message frequency may vary.",
           ],
         },
 

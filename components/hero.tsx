@@ -26,6 +26,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="space-y-6 lg:space-y-8 order-1"
           >
+
             <div className="space-y-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -103,6 +104,25 @@ export function Hero() {
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
                 priority
               />
+
+              {/* Logo positioned next to the image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="absolute -top-4 -right-4 lg:-top-6 lg:-right-6"
+              >
+                <div className="bg-white rounded-xl p-3 shadow-lg border border-gray-100">
+                  <Image
+                    src="https://res.cloudinary.com/isaacdev/image/upload/v1760672584/dil_zr0iuu.png"
+                    alt="Dorraiz Insurance Logo"
+                    width={100}
+                    height={40}
+                    className="w-20 lg:w-24 h-auto object-contain"
+                    priority
+                  />
+                </div>
+              </motion.div>
 
               {/* Floating Cards */}
               <motion.div

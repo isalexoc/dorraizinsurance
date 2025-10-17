@@ -197,7 +197,7 @@ export const translations = {
         "¿Listo para encontrar la cobertura de seguro perfecta? Contácteme hoy para una consulta personalizada y cotización gratuita adaptada a sus necesidades específicas.",
       form: {
         smsConsent:
-          "Al marcar esta casilla, doy mi consentimiento para recibir mensajes de texto relacionados con mis servicios de seguros de Dorraiz Insurance. Puedes responder “STOP” en cualquier momento para darte de baja. Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes puede variar. Envía AYUDA al (956) 302-1451 para recibir asistencia. Para más información, visita nuestra Política de Privacidad y Términos de Servicio.",
+          "Al marcar esta casilla, acepta recibir mensajes SMS relacionados con Atención al cliente, Notificaciones de cuenta y Alertas de fraude de Dorraiz Insurance. Puede responder \"STOP\" en cualquier momento para cancelar. Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes puede variar. Envíe AYUDA para asistencia. Para más información, consulte nuestra política de privacidad",
         title: "Solicite Su Cotización",
         name: "Nombre Completo *",
         email: "Correo Electrónico *",
@@ -462,7 +462,7 @@ export const translations = {
         "Ready to find the perfect insurance coverage? Contact me today for a personalized consultation and free quote tailored to your specific needs.",
       form: {
         smsConsent:
-          "By checking this box, I consent to receive text messages related to my insurance services from Dorraiz Insurance. You can reply “STOP” at any time to opt out. Message and data rates may apply. Message frequency may vary. Text HELP to (956) 302-1451 for assistance. For more information, visit our Privacy Policy and Terms of Service.",
+          "By checking this box, you agree to receive SMS messages related to Customer care, Account Notifications, and Fraud alerts from Dorraiz Insurance. You can reply \"STOP\" at any time to opt out. Message and data rates may apply. Message frequency may vary. text HELP for assistance. For more information, please refer to our privacy policy",
         title: "Request Your Quote",
         name: "Full Name *",
         email: "Email Address *",
