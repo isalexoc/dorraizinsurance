@@ -6,6 +6,11 @@ import { contactFormSchema } from "@/lib/validation/contactFormSchema";
 export const submitContactForm = async (_: any, formData: FormData) => {
   try {
     const data = Object.fromEntries(formData.entries());
+    
+    // Convert consent string to boolean if present
+    if (data.consent !== undefined) {
+      data.consent = data.consent === 'true' || data.consent === true;
+    }
 
     const parsed = contactFormSchema.parse(data);
 

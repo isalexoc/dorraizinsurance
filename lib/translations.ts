@@ -20,8 +20,8 @@ export const translations = {
           es: "Su información será utilizada para responder a su consulta y brindar servicios relacionados con seguros.",
         },
         sms: {
-          en: "By checking the consent box, you agree to receive SMS messages from Dorraiz Insurance. Message and data rates may apply. You may opt-out at any time by replying STOP.",
-          es: "Al marcar la casilla de consentimiento, acepta recibir mensajes SMS de Dorraiz Insurance. Pueden aplicarse tarifas por mensajes y datos. Puede cancelar en cualquier momento respondiendo STOP.",
+          en: "By checking the consent box, I consent to receive SMS from Dorraiz Insurance. Reply STOP to opt-out; Reply HELP for support; Message & data rates may apply; Messaging frequency may vary.",
+          es: "Al marcar la casilla de consentimiento, acepto recibir mensajes SMS de Dorraiz Insurance. Responda STOP para cancelar; Responda AYUDA para soporte; Pueden aplicarse tarifas de mensajes y datos; La frecuencia de mensajes puede variar.",
         },
         accuracy: {
           en: "You agree to provide accurate information. False information may result in service denial.",
@@ -197,7 +197,7 @@ export const translations = {
         "¿Listo para encontrar la cobertura de seguro perfecta? Contácteme hoy para una consulta personalizada y cotización gratuita adaptada a sus necesidades específicas.",
       form: {
         smsConsent:
-          "Al marcar esta casilla, acepta recibir mensajes SMS relacionados con Atención al cliente, Notificaciones de cuenta y Alertas de fraude de Dorraiz Insurance. Puede responder \"STOP\" en cualquier momento para cancelar. Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes puede variar. Envíe AYUDA para asistencia. Para más información, consulte nuestra política de privacidad",
+          "Al marcar esta casilla, acepto recibir mensajes SMS de Dorraiz Insurance. Responda STOP para cancelar; Responda AYUDA para soporte; Pueden aplicarse tarifas de mensajes y datos; La frecuencia de mensajes puede variar. Visite nuestra política de privacidad para ver nuestros términos y condiciones.",
         title: "Solicite Su Cotización",
         name: "Nombre Completo *",
         email: "Correo Electrónico *",
@@ -390,8 +390,8 @@ export const translations = {
           es: "Su información será utilizada para responder a su consulta y brindar servicios relacionados con seguros.",
         },
         sms: {
-          en: "By checking the consent box, you agree to receive SMS messages from Dorraiz Insurance. Message and data rates may apply. You may opt-out at any time by replying STOP.",
-          es: "Al marcar la casilla de consentimiento, acepta recibir mensajes SMS de Dorraiz Insurance. Pueden aplicarse tarifas por mensajes y datos. Puede cancelar en cualquier momento respondiendo STOP.",
+          en: "By checking the consent box, I consent to receive SMS from Dorraiz Insurance. Reply STOP to opt-out; Reply HELP for support; Message & data rates may apply; Messaging frequency may vary.",
+          es: "Al marcar la casilla de consentimiento, acepto recibir mensajes SMS de Dorraiz Insurance. Responda STOP para cancelar; Responda AYUDA para soporte; Pueden aplicarse tarifas de mensajes y datos; La frecuencia de mensajes puede variar.",
         },
         accuracy: {
           en: "You agree to provide accurate information. False information may result in service denial.",
@@ -462,7 +462,7 @@ export const translations = {
         "Ready to find the perfect insurance coverage? Contact me today for a personalized consultation and free quote tailored to your specific needs.",
       form: {
         smsConsent:
-          "By checking this box, you agree to receive SMS messages related to Customer care, Account Notifications, and Fraud alerts from Dorraiz Insurance. You can reply \"STOP\" at any time to opt out. Message and data rates may apply. Message frequency may vary. text HELP for assistance. For more information, please refer to our privacy policy",
+          "By checking this box, I consent to receive SMS from Dorraiz Insurance. Reply STOP to opt-out; Reply HELP for support; Message & data rates may apply; Messaging frequency may vary. Visit our privacy policy to see our terms and conditions.",
         title: "Request Your Quote",
         name: "Full Name *",
         email: "Email Address *",

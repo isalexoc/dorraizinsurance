@@ -60,26 +60,14 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const fieldErrors: Record<string, string> = {};
-
-    // Frontend required validation
-    if (!formData.phone) fieldErrors.phone = "Este campo es obligatorio.";
-    if (!formData.consent)
-      fieldErrors.consent = "Debe aceptar los términos para continuar.";
-
-    if (Object.keys(fieldErrors).length > 0) {
-      setErrors(fieldErrors);
-      toast({
-        title: "Error de validación",
-        description: "Por favor complete todos los campos requeridos.",
-        variant: "destructive",
-      });
-      return;
-    }
+    // Clear previous errors
+    setErrors({});
 
     setIsLoading(true);
     try {
-      await contactFormSchema.parseAsync(formData);
+      // Prepare data for validation
+      const validationData = { ...formData };
+      await contactFormSchema.parseAsync(validationData);
 
       const payload = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
@@ -105,23 +93,25 @@ export default function Contact() {
     } catch (err) {
       if (err instanceof z.ZodError) {
         const fieldErrors = err.flatten().fieldErrors;
-        setErrors(
-          Object.fromEntries(
-            Object.entries(fieldErrors).map(([key, value]) => [
-              key,
-              value?.[0] ?? "",
-            ])
-          )
+        const errorMessages = Object.fromEntries(
+          Object.entries(fieldErrors).map(([key, value]) => [
+            key,
+            value?.[0] ?? "",
+          ])
         );
+        setErrors(errorMessages);
+        
+        // Show specific error message for the first field with an error
+        const firstError = Object.values(errorMessages)[0];
         toast({
-          title: "Error de validación",
-          description: "Por favor revisa los campos.",
+          title: "Please fix the following issues:",
+          description: firstError,
           variant: "destructive",
         });
       } else {
         toast({
-          title: "Error",
-          description: "Algo salió mal.",
+          title: "Submission Error",
+          description: "There was a problem submitting your form. Please try again.",
           variant: "destructive",
         });
       }
@@ -150,11 +140,12 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">{t.name}</Label>
+                  <Label htmlFor="name">{t.name} *</Label>
                   <Input
                     id="name"
                     value={formData.name}
                     onChange={handleChange}
+                    placeholder="Enter your full name"
                     required
                   />
                   {errors.name && (
@@ -162,12 +153,13 @@ export default function Contact() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t.email}</Label>
+                  <Label htmlFor="email">{t.email} *</Label>
                   <Input
                     id="email"
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
+                    placeholder="your.email@example.com"
                     required
                   />
                   {errors.email && (
@@ -178,12 +170,13 @@ export default function Contact() {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="phone">{t.phone}</Label>
+                  <Label htmlFor="phone">{t.phone} *</Label>
                   <Input
                     id="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
+                    placeholder="(555) 123-4567"
                     required
                   />
                   {errors.phone && (
@@ -191,13 +184,13 @@ export default function Contact() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="insuranceType">{t.insuranceType}</Label>
+                  <Label htmlFor="insuranceType">{t.insuranceType} *</Label>
                   <Select
                     onValueChange={handleInsuranceChange}
                     value={formData.insuranceType}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona tipo" />
+                      <SelectValue placeholder="Choose your insurance type" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="aca">{t.types.aca}</SelectItem>
@@ -211,18 +204,25 @@ export default function Contact() {
                       <SelectItem value="other">{t.types.other}</SelectItem>
                     </SelectContent>
                   </Select>
+                  {errors.insuranceType && (
+                    <p className="text-sm text-red-500">{errors.insuranceType}</p>
+                  )}
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">{t.message}</Label>
+                <Label htmlFor="message">{t.message} *</Label>
                 <Textarea
                   id="message"
                   rows={4}
-                  placeholder={t.messagePlaceholder}
+                  placeholder="Please describe your insurance needs or questions..."
                   value={formData.message}
                   onChange={handleChange}
+                  required
                 />
+                {errors.message && (
+                  <p className="text-sm text-red-500">{errors.message}</p>
+                )}
               </div>
 
               <div className="flex items-start space-x-3">
@@ -241,6 +241,9 @@ export default function Contact() {
                 <p className="text-sm text-red-500">{errors.consent}</p>
               )}
               <div className="text-sm text-gray-600">
+                <p className="mb-2">
+                  <span className="text-red-500">*</span> Required fields
+                </p>
                 <p className="mt-4 flex justify-between">
                   <Link
                     href="/privacy-policy"
