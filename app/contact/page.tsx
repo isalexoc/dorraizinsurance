@@ -140,7 +140,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">{t.name} *</Label>
+                  <Label htmlFor="name">{t.name}</Label>
                   <Input
                     id="name"
                     value={formData.name}
@@ -153,7 +153,7 @@ export default function Contact() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">{t.email} *</Label>
+                  <Label htmlFor="email">{t.email}</Label>
                   <Input
                     id="email"
                     type="email"
@@ -170,7 +170,7 @@ export default function Contact() {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="phone">{t.phone} *</Label>
+                  <Label htmlFor="phone">{t.phone}</Label>
                   <Input
                     id="phone"
                     type="tel"
@@ -184,7 +184,7 @@ export default function Contact() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="insuranceType">{t.insuranceType} *</Label>
+                  <Label htmlFor="insuranceType">{t.insuranceType}</Label>
                   <Select
                     onValueChange={handleInsuranceChange}
                     value={formData.insuranceType}
@@ -211,7 +211,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">{t.message} *</Label>
+                <Label htmlFor="message">{t.message}</Label>
                 <Textarea
                   id="message"
                   rows={4}
@@ -241,9 +241,6 @@ export default function Contact() {
                 <p className="text-sm text-red-500">{errors.consent}</p>
               )}
               <div className="text-sm text-gray-600">
-                <p className="mb-2">
-                  <span className="text-red-500">*</span> Required fields
-                </p>
                 <p className="mt-4 flex justify-between">
                   <Link
                     href="/privacy-policy"
